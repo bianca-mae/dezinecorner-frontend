@@ -7,7 +7,7 @@ class App {
   constructor(){
     this.name = "Dezine Corner"
     this.version = "1.0.0"
-    this.apiBase = 'http://localhost:3000'
+    this.apiBase = 'https://bmgatus-dezinecorner-backend.onrender.com'
     this.rootEl = document.getElementById("root")
     this.version = "1.0.0"
   }
