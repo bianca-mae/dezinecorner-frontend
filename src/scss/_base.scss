@@ -1,0 +1,1332 @@
+// Base
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  //border: 2px solid red;
+}
+
+body {
+  padding: 0;  
+  margin: 0;
+  color: var(--base-txt-color);
+  font-family: var(--base-font-family);
+  font-weight: 300;
+  background: var(--body-bg);
+  height: 100vh;
+}
+
+html{
+  margin: 0;
+}
+
+
+// headings ------------
+h1,h2,h3,h5,h6 {
+  margin: 0 0 .5em;
+  color: var(--heading-color);
+}
+
+// links ---------------
+a {
+  color: var(--link-color);
+}
+
+
+// app splash screen -------
+.app-splash {
+  position: fixed;
+  background: #fff;
+  color: #777;
+  display: flex;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .app-logo {
+    width: 180px;
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+
+// helper classes ---------
+.calign{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 15em;
+}
+
+.calign h1{
+  font-size: 3em;
+}
+
+.calign p{
+  font-size: 2em;
+}
+
+.large-text {
+  font-size: 1.6em;
+}
+
+.brand-color {
+  color: var(--brand-color);
+}
+
+// generic-entry ------------
+.generic-entry {
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.07);
+  border-radius: 5px;
+  margin-bottom: .5em;
+  padding: 1em;
+  background: #fff;
+}
+
+// root ---------------
+#root {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  overflow-x: hidden;
+}
+
+// page --------------------
+.page-content {
+  position: absolute;
+  top: var(--app-header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 1em;
+  &.no-pad {
+    padding: 0;
+  }
+}
+
+.page-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// SIGN IN + SIGN UP PAGES --------------------------
+/* .signinup-box,
+.signup-box {  
+  max-width: 320px;
+  text-align: center;
+} */
+
+.page-content.signin, .page-content.signup {
+  background-color: #AD9D43;
+  overflow-y: hidden;
+}
+
+.signinup-box{
+  width: 20%;
+  height: auto;
+  // display: inline-block;
+  color: #F5F5F5;
+  padding-left: 3em;
+}
+
+.page-content.signin form, .page-content.signup form{
+  display: inline-block;
+} 
+
+.input-validation-required-signin, .input-validation-required-signup{
+  position: relative;
+  left: 65em;
+  top: -18em;
+  color: #F5F5F5;
+}
+
+sl-input.login::part(base), sl-input.signup::part(base){
+  background-color: #AD9D43;
+  border: #AD9D43 0.1em solid;
+  border-bottom: #F5F5F5 0.1em solid;
+  border-radius: 0px;
+  font-family: "Instrument Sans";
+}
+
+sl-input.login::part(input), sl-input.signup::part(input){
+  color: #F5F5F5;
+}
+
+sl-button.submit-btn::part(base) {
+  font-family: "Instrument Serif";
+  background-color: #fff;
+  border: #AD9D43 0.1em solid;
+  color: #AD9D43
+}
+
+sl-button.submit-btn::part(base):hover{
+  font-family: "Instrument Serif";
+  background-color: #AD9D43;
+  border: #F5F5F5 0.1em solid;
+  color: #F5F5F5;
+} 
+
+sl-select.drop-select::part(combobox){
+  background-color: #AD9D43;
+  border: 0px #AD9D43 solid;
+  border-bottom: 0.1em #F5F5F5 solid;
+  border-radius: 0em;
+}
+
+sl-select.drop-select::part(display-input){
+  color: #F5F5F5;
+}
+
+/* .signinup-logo {
+  width: 200px;
+  margin-bottom: 1em;
+}*/
+
+// GUIDE PAGE ---------------
+/* .guide-step {
+  padding: 1em;
+  margin: 1.5em auto;
+  max-width: 600px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}*/
+
+.events-grid {
+  display: flex;
+  flex-wrap: wrap;
+  .event-card {
+    width:  calc(33.3% - 1em);
+    margin: 0.5em;
+  }
+}
+
+// event dialog 
+.event-dialog {
+  --width: 80%;
+}
+
+.event-dialog::part(body) {
+  margin-top: -2em;
+}
+
+// GUIDE PAGE ----------------------------
+.page-content.guide{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.page-content h3 {
+  padding: 1.5em;
+  color: #AD9D43;
+  font-size: 1.5em;
+}
+
+.guide-img{
+  width: auto;
+  height: 72%;
+  display: inline-block;
+  position: relative;
+  top: 10%;
+}
+
+.guide-btn{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.page-content.guide sl-button.submit-btn:hover{
+  animation: gbtn infinite 3s ease-in-out;
+}
+
+@keyframes gbtn{
+  0%{
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(-20%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+// HOME PAGE -----------------------------
+.page-content.home{
+  background-color: #AD9D43;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-text{
+  transform: translate(-15%);
+}
+
+.home-text h1 p {
+  color: #F5F5F5;
+  padding-bottom: 3em;
+}
+
+.page-content.home h1{
+  // padding-top: 0.5em;
+  // padding-left: 3em;
+  font-size: 2.5em;
+  text-align: center;
+  color: #F5F5F5;
+  font-weight: 300;
+}
+
+.page-content.home p{
+  // padding-top: 2em;
+  // padding-left: 6em;
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 2.5em;
+  color: #F5F5F5;
+}
+
+.page-content.home img {
+  max-width: 55%;
+  max-height: 85%;
+  transform: translate(10%);
+  cursor: pointer;
+}
+
+.page-content.home img:hover {
+  animation: animate infinite 3s ease-in-out;
+}
+
+@keyframes animate{
+  0%{
+    transform: translate(10%);
+  }
+  50%{
+    transform: translate(5%);
+  }
+  100%{
+    transform: translate(10%);
+  }
+}
+
+.home-btn{
+  // padding-left: 15.5em;
+  // padding-top: 5em;
+  align-items: center;
+  justify-content: center;
+  transform: translate(120%);
+}
+
+.home-btn:hover{
+  animation: btnani infinite 3s ease-in-out;
+}
+
+@keyframes btnani{
+  0%{
+    transform: translate(120%);
+  }
+  50%{
+    transform: translate(115%);
+  }
+  100%{
+    transform: translate(120%);
+  }
+}
+
+sl-button.home-btn::part(base){
+  border: #F5F5F5 1px solid;
+  background-color: #AD9D43;
+  font-family: Instrument Serif;
+  font-size: 1.2em;
+  color: #F5F5F5;
+}
+
+sl-button.home-btn::part(base):hover{
+  color: #AD9D43;
+  background-color: #F5F5F5;
+}
+
+//EVENTS PAGE ----------------------------
+.filter-menu h1{
+  position: relative;
+  left: 1em;
+}
+.events-content{
+  position: relative;
+  top: 6em;
+}
+
+.events-grid{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding-top: 5em;
+  padding-left: 1em;
+
+}
+
+h2{
+  position: relative;
+  top: 0.4em;
+  left: 0.7em;
+  font-size: 2.5em;
+  font-weight: normal;
+}
+
+.filter-btn{
+  padding-right: 2em;
+  position: relative;
+  top: 1.5em;
+  left: 1.5em;
+}
+
+.filter-btn:hover{
+  animation: filterbtn infinite 3s ease-in-out;
+}
+
+@keyframes filterbtn{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.page-content.events-grid{
+  position: relative;
+  top: 5em;
+}
+
+.clear-btn {
+  position: relative;
+  top: 3em;
+  left: 1em;
+}
+
+
+/* sl-button.filter-btn::part(base){
+  font-family: "Instrument sans", sans-serif;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 0px #fff solid;
+  color: #AD9D43;
+} */
+
+
+sl-button.filter-btn::part(base){
+  font-family: "Instrument sans", sans-serif;
+  text-transform: uppercase;
+  background-color: #AD9D43;
+  border: 0px #fff solid;
+}
+
+sl-button.filter-btn::part(base):hover{
+  font-family: "Instrument sans", sans-serif;
+  text-transform: uppercase;
+  color: #E9D5C8;
+}
+
+/* sl-button.filter-btn::part(base):focus-visible{
+  font-family: "Instrument sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  color: #CCCFC8;
+} */
+
+sl-button.clear-btn::part(base):hover{
+  color: #E9D5C8;
+}
+
+// DIALOG --------------------------------
+
+/*.event-type, .price{
+  display: inline-block;
+}*/ 
+
+.image {
+  width: auto;
+  height: 34em;
+}
+
+.description{
+  width: 30em;
+}
+
+.content p{
+  margin: 0em;
+  padding: 0em;
+  padding-top: 2em;
+}
+
+.content sl-button{
+  transform: translate(470%, 0%);
+}
+
+sl-button.add-cart::part(base){
+  background-color: #AD9D43;
+  border: 0.1em #F5F5F5 solid;
+  color: #F5F5F5;
+  font-family: "Instrument Serif";
+}
+
+sl-button.add-cart::part(base):hover{
+  background-color: #F5F5F5;
+  border: 0.1em #F5F5F5 solid;
+  color: #AD9D43;
+  font-family: "Instrument Serif";
+}
+
+
+// CART ----------------------------------
+
+.page-content.cart h1 {
+  position: relative;
+  top: 0.8em;
+  left: 0.3em;
+  font-family: "Instrument Serif";
+}
+
+.page-content.cart.events-grid {
+  position: relative;
+  top: 0.8em;
+}
+
+.next-btn{
+  position: relative;
+  left: 81em;
+}
+
+.next-btn:hover{
+  animation: nextbtn infinite 3s ease-in-out;
+}
+
+@keyframes nextbtn{
+  0%{
+    transform: translate(0%);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+sl-button.next-btn::part(base){
+  border: #AD9D43 0.1em solid;
+  font-family: "Instrument Serif";
+  font-size: 1.1em;
+}
+
+sl-button.next-btn::part(base):hover{
+  border: #AD9D43 0.1em solid;
+  font-family: "Instrument Serif";
+  font-size: 1.1em;
+  background-color: #AD9D43;
+  color: #F5F5F5;
+}
+
+// CHECKOUT -------------------------------
+.checkout-content{
+  position: relative;
+  top: 6em;
+  left: 3em;
+}
+
+.heading{
+  display: flex;
+}
+
+.back-arrow{
+  font-size: 2em;
+  padding-right: 1em;
+  padding-top: 0.2em;
+}
+
+sl-icon.back-arrow::part(svg):hover{
+  color: #AD9D43;
+  cursor: pointer;
+}
+
+.checkout-steps{
+  display: flex;
+  gap: 10em;
+}
+
+.checkout-steps p{
+  font-size: 1.2em;
+  position: relative;
+  left: 3.4em;
+}
+
+.current-step{
+  color: #AD9D43;
+}
+
+.personal-details {
+  position: relative;
+  left: 3.4em;
+  top: 1em;
+  font-size: 1.2em;
+}
+
+.personal-details p{
+  position: relative;
+  bottom: 1.2em;
+}
+
+.personal-details form {
+  width: 30vw;
+}
+
+.personal-details form input{
+  border: #fff 0px solid;
+  border-bottom: 0.1em #AD9D43 solid;
+  width: 50%;
+}
+
+.personal-details form textarea{
+  border: #fff 0px solid;
+  border-bottom: 0.12em #AD9D43 solid;
+  width: 50%;
+  font-size: 0.8em;
+  font-family: "Instrument Sans";
+  padding-top: 2em;
+}
+
+.personal-details div {
+  padding-bottom: 0.5em;
+}
+
+.personal-details input {
+  // padding-top: 2em;
+  font-size: 0.8em;
+  padding-top: 2em;
+  font-family: "Instrument Sans";
+}
+
+.next-paybtn{
+  position: relative;
+  bottom: 3em;
+  left: 60em;
+}
+
+.next-paybtn:hover{
+  animation: npaybtn infinite 3s ease-in-out;
+}
+
+@keyframes npaybtn{
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+
+
+sl-button.next-paybtn::part(base){
+  font-family: "Instrument Serif";
+  font-size: 1em;
+  border: #AD9D43 1px solid;
+}
+
+sl-button.next-paybtn::part(base):hover{
+  font-family: "Instrument Serif";
+  font-size: 1em;
+  border: #F5F5F5 1px solid;
+  color: #F5F5F5;
+  background-color: #AD9D43;
+}
+
+// CONTACT -------------------------------
+.page-content.contact{
+  display: inline-block;
+  top: 2.4em;
+  left: 1.4em;
+}
+
+.cform{
+  position: relative;
+  top: 3em;
+}
+
+.m-user-details, .input-group-cform{
+  display: inline-block;
+}
+
+.m-user-details{
+  width: 30%;
+}
+
+.input-group-cform{
+  position: relative;
+  top: -12em;
+  width: 50%;
+  left: 5em;
+}
+
+sl-input.input-form::part(base){
+  background-color: #fff;
+  border: 0px #fff solid;
+  border-bottom: #AD9D43 0.1em solid;
+  border-radius: 0px;
+  font-family: "Instrument Sans";
+}
+
+sl-textarea.input-form-ta::part(base){
+  background-color: #fff;
+  border: #AD9D43 0.1em solid;
+  border-radius: 0px;
+  font-family: "Instrument Sans";
+}
+
+.contact-text{
+  padding-top: 3em;
+}
+
+.cform sl-button.submit-btn{
+  position: relative;
+  top: 5em;
+}
+
+.cform sl-button.submit-btn:hover{
+  animation: cformbtn infinite 3s ease-in-out;
+}
+
+@keyframes cformbtn{
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+
+
+
+// PROFILE -------------------------------
+.profile-content{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 5em;
+}
+
+.profile-content h2{
+  position: relative;
+  top: 1em;
+  text-align: center;
+  left: 0.5em;
+}
+
+.pfp{
+  display: inline-block;
+  position: relative;
+  right: 4em;
+  top: 3em;
+}
+
+.user-details{
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  top: 5.5em;
+  font-size: 1.2em;
+}
+
+.edit-btn{
+  display: inline-block;
+  position: relative;
+  top: 8em;
+}
+
+sl-button.edit-btn::part(base){
+  background-color: #fff;
+  border: 0.1em #AD9D43 solid;  
+  color: #AD9D43;
+  font-family: "Instrument Serif";
+}
+
+sl-button.edit-btn::part(base):hover{
+  background-color: #AD9D43;
+  color: #F5F5F5;
+}
+
+// EDIT PROFILE --------------------------
+.page-content.edit-profile{
+  left: 2em;
+  top: 4em;
+}
+
+.page-content.edit-profile h2{
+  position: relative;
+  left: 0;
+  font-size: 2em;
+}
+
+.edit-profile-form{
+  position: relative;
+  top: 2em;
+}
+
+.user-pd{
+  display: inline-block;
+  width: 30%;
+}
+.bio-pfp{
+  display: inline-block;
+  width: 30%;
+  position: absolute;
+  left: 30em;
+}
+
+.edit-profile-form sl-button.submit-btn{
+  position: relative;
+  top: 5em;
+  padding-right: 3em;
+}
+
+sl-input.input-form::part(base){
+  background-color: #fff;
+  border: 0px #fff solid;
+  border-bottom: #AD9D43 0.1em solid;
+  border-radius: 0px;
+  font-family: "Instrument Sans";
+}
+
+sl-textarea.input-form-ta::part(base){
+  background-color: #fff;
+  border: #AD9D43 0.1em solid;
+  border-radius: 0px;
+  font-family: "Instrument Sans";
+}
+
+// CREATE EVENT -----------------------------
+.page-content.add-event{
+  position: relative;
+  left: 2em;
+  top: 5em;
+}
+
+.event-details, .event-details-two{
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.event-details-two{
+  position: relative;
+  top: 4.7em;
+  left: 3em;
+}
+
+sl-input.input-form-date::part(base){
+  border: 0px #fff solid;
+  border-bottom: #AD9D43 0.1em solid;
+  border-radius: 0px;
+  font-family: "Instrument Sans" serif;
+}
+
+
+// RESPONSIVE - DESKTOP ------------------
+@media only screen and (max-width: 1366px) {
+  .signinup-box{
+    width: 30%;
+  }
+
+  .signinup-box img{
+    width: 80%;
+  }
+
+  .signinup-box p{
+    width: 80%;
+    font-size: 1.5em;
+  }
+
+  .input-validation-required-signup,  .input-validation-required-signin{
+    position: relative;
+    left: 40em;
+    top: -15em;
+    font-size: 1.2em;
+    width: 30%;
+  }
+
+  .page-content.guide img{
+    width: auto;
+    height: 100%;
+  }
+
+  .page-content.guide h3{
+    font-size: 2em;
+  }
+
+  .guide-btn sl-button{
+    position: relative;
+    top: 2em;
+  }
+
+  .guide-btn sl-button.submit-btn::part(base){
+    font-size: 1em;
+  }
+
+  .filter-menu h1{
+    font-size: 3em;
+    position: relative;
+    left: 0.7em;
+  }
+
+  .events-grid{
+    width: 100%;
+  }
+
+  va-event.event-card::part(image){
+    width: 50em;
+    height: 30em;
+  }
+
+  .add-cart{
+    position: relative;
+    left: -2em;
+  }
+
+  .page-content.cart h1{
+    font-size: 3em;
+  }
+
+  .next-btn{
+    position: relative;
+    left: 58em;
+    font-size: 1.3em;
+    top: 0;
+  }
+
+  .page-content.cart .events-grid{
+    position: relative;
+    top: -3em;
+  }
+
+  .heading h1{
+    font-size: 3em;
+    position: relative;
+  }
+
+  .back-arrow{
+    font-size: 3em;
+  }
+
+  .checkout-steps p{
+    font-size: 1.8em;
+  }
+
+  .personal-details{
+    font-size: 1.8em;
+    position: relative;
+    left: -0.5em;
+    top: 2em;
+    text-align: center;
+    align-items: center;
+  }
+
+  .personal-details p{
+    text-align: left;
+    left: 3em;
+  }
+  
+  .personal-details form{
+    display: flex;
+    position: relative;
+    left: 3em;
+  }
+
+  .personal-details form > div{
+    padding-right: 3em;
+  }
+
+  .next-paybtn{
+    position: relative;
+    left: 18em;
+    top: 3em;
+  }
+
+  sl-button.next-paybtn::part(base){
+    font-size: 0.8em;
+  }
+
+  .contact-text h1{
+    font-size: 3em;
+  }
+
+  .contact-text p{
+    font-size: 1.5em;
+  }
+
+  .m-user-details, .input-group-cform{
+    width: 45%;
+  }
+
+  .contact-form .submit-btn{
+    position: relative;
+    top: 2em;
+    left: 1em;
+  }
+
+  .profile-content{
+    position: relative;
+    top: 7em;
+  }
+
+  .profile-content h1{
+    font-size: 3em;
+  }
+
+  .pfp{
+    position: relative;
+    top: -1em;
+  }
+
+  .page-content-profile{
+    position: relative;
+    top: -3em;
+  }
+
+  .page-content.edit-profile{
+    height: 100vh;
+    position: relative;
+    top: 5em;
+  }
+
+  .page-content.edit-profile h1{
+    font-size: 3em;
+  }
+
+  .user-pd, .bio-pfp{
+    width: 35%;
+  }
+
+  .bio-pfp{
+    position: relative;
+    left: 8em;
+    top: -3em;
+  }
+
+  .user-pd div{
+    padding-bottom: 1.2em;
+  }
+
+  .bio-pfp div{
+    padding-bottom: 1.2em;
+  }
+}
+
+
+// RESPONSIVE - MOBILE -------------------
+@media only screen and (max-width: 768px){ 
+
+  .page-content.signin{
+    height: 100vh;
+  }
+
+  .signinup-box{
+    display: flex;
+    width: 50%;
+    position: relative;
+    top: 1em;
+    flex-wrap: wrap;
+    left: 13.5em;
+    justify-content: center;
+  }
+
+  .signinup-box p{
+    width: 100%;
+    position: relative;
+    right: 3em;
+    top: 0.5em;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  .signinup-box img{
+    width: 50%;
+    position: relative;
+    right:4em;
+  }
+
+  .input-validation-required-signup,  .input-validation-required-signin{
+    position: relative;
+    left: 10em;
+    top: 1em;
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .input-validation-required-signin sl-button.submit-btn{
+    font-size: 0.8em;
+  }
+
+  .home-logo{
+    display: none;
+  }
+
+  .app-top-nav{
+    display: none;
+  }
+
+
+  .page-content.guide img{
+    width: auto;
+    height: 100%;
+  }
+
+  .guide-btn{
+    transform: translate(-50%, -170%)
+  }
+
+
+  .page-content.home{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-text{
+    position: relative;
+    left: 7em;
+    top: 3em;
+  }
+
+  .home-text sl-button{
+    left: 7em;
+  }
+
+  .page-content.home img{
+    max-width: 100%;
+    max-height: auto;
+    position: relative;
+    top: 5em;
+  }
+
+
+  .addevent-form{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .event-details, .event-details-two{
+    width: 100%;
+    height: 100%;
+  }
+
+  .event-details div sl-input {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .event-details-two{
+    position: relative;
+    left: 0;
+    top: 1em;
+  }
+  .event-details-two sl-button{
+    position: relative;
+    top: 50em;
+  }
+
+  .addevent-form sl-button{
+    position: relative;
+    top: 5em;
+  }
+  
+  .heading h1{
+    font-size: 3em;
+  }
+
+  .back-arrow{
+    font-size: 3em;
+  }
+  
+  .events-content{
+    font-size: 1.3em;
+  }
+  .filter-menu{
+    text-align: center;
+  }
+
+  .filter-menu h1{
+    position: relative;
+    left: 0.3em;
+    font-size: 2.8em;
+  }
+
+  .events-grid{
+    display: inline-block;
+    text-align: center;
+    font: 1.3em;
+  }
+
+  .event-cards{
+    display: flex;
+  }
+
+
+  
+  .page-content.cart {
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  .page-content.contact{
+    width: 100vw;
+  }
+
+  .page-content.contact h1{
+    font-size: 3em;
+  }
+
+  .contact-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    left: 0.5em;
+    font-size: 1.3em;
+  }
+
+  .contact-form sl-button{
+    width: 80vw;
+    position: relative;
+    left: 4.5em;
+    top: 5em;
+  }
+
+  .m-user-details{
+    width: 85vw;
+  }
+
+  .input-group-cform{
+    position: relative;
+    left: 0;
+    top: 1em;
+    width: 85vw;
+  }
+
+  .profile-content{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-content h1{
+    font-size: 3em;
+  }
+
+  .page-content-profile{
+    flex-direction: column;
+  }
+
+  .pfp, .user-details{
+    display: block;
+  }
+
+  .pfp{
+    position: relative;
+    left: -0.3em;
+    top: 5em;
+  }
+
+  .user-details{
+    font-size: 1.6em;
+    text-align: center;
+    top: 2.8em;
+  }
+
+  .edit-btnc sl-button{
+    position: relative;
+    top: 10em;
+  }
+
+  .page-content.edit-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -3em;
+    left: 0;
+    height: 110vh;
+  }
+  
+  .page-content.edit-profile h1{
+    font-size: 3em;
+  }
+
+  .edit-profile-form{
+    width: 90vw;
+  }
+
+  .user-pd{
+    width: 90vw;
+  }
+
+  .edit-profile-form p{
+    font-size: 1.1em;
+    position: relative;
+    top: 2em;
+  }
+
+  sl-input.input-form::part(base){
+    font-size: 1.1em;
+  }
+
+  sl-textarea.input-form-ta::part(base){
+    font-size: 1.1em;
+  }
+
+  .bio-pfp{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    width: 90vw;
+  }
+
+  .buttons-profile{
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttons-profile sl-button.submit-btn::part(base){
+    font-size: 1.3em;
+    width: 20vw;
+  }
+
+}
+
